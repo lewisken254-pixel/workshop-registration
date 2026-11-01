@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("bd2965b384d6068693cff248a028d003.jpg");
+             background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            background-size: cover;
+        
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.3);
+            backdrop-filter: transparent(10px);
+            -webkit-backdrop-filter: transparent(10px);
+
+            width: 90%;
+            max-width: 500px;
+            box-sizing: border-box;
+
+            margin: auto;
+            padding: 30px;
+            border-radius: 12px;
+
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            text-align: center;
+            color: #1e3557;
+        }
+
+        p {
+            text-align: center;
+            color: #555;
+        }
+
+        label {
+            display: block;
+            margin-top: 18px;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select {
+            width: 100%;
+            padding: 11px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        input:focus, select:focus {
+            outline: 2px solid #2563eb;
+            border-color: #2563eb;
+        }
+
+        .option {
+            margin: 10px 0;
+        }
+
+        .option label {
+            display: inline;
+            font-weight: normal;
+            margin-left: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 25px;
+            background-color: #2563eb;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d4ed8;
+        }
+
+        #message {
+            margin-top: 15px;
+            color: green;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Workshop Registration</h1>
+        <p>Register for our upcoming workshop!</p>
+
+        <form id="registrationForm">
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname"
+                   name="fullname"
+                   placeholder="Enter your full name"
+                   required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email"
+                   name="email"
+                   placeholder="example@email.com"
+                   required>
+
+            <label for="session">Preferred Session:</label>
+            <select id="session" name="session" required>
+                <option value="">Select a session</option>
+                <option value="morning">Morning Session</option>
+                <option value="afternoon">Afternoon Session</option>
+                <option value="evening">Evening Session</option>
+            </select>
+
+            <label>Attendance Mode:</label>
+
+            <div class="option">
+                <input type="radio" id="onsite"
+                       name="attendance"
+                       value="onsite" required>
+                <label for="onsite">On-site</label>
+            </div>
+
+            <div class="option">
+                <input type="radio" id="online"
+                       name="attendance"
+                       value="online">
+                <label for="online">Online</label>
+            </div>
+
+            <div class="option">
+                <input type="checkbox" id="consent"
+                       name="consent" required>
+                <label for="consent">
+                    I agree to the workshop terms and conditions.
+                </label>
+            </div>
+
+            <button type="submit">Submit Registration</button>
+
+            <p id="message" role="status"></p>
+
+        </form>
+    </div>
+ <div class="audio-player">
+            <p>Enjoy the Music!</p>
+
+            <audio controls autoplay>
+                <source src="Michael Jackson - Rock With You.mp3" type="audio/mpeg">
+                <source src="Michael Jackson - Rock With You.wav" type="audio/wav">
+               
+            </audio>
+        </div>
+
+    <script>
+        document.getElementById("registrationForm")
+        .addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            document.getElementById("message").textContent =
+            "Registration submitted successfully!";
+
+        });
+    </script>
+
+</body>
+</html>
